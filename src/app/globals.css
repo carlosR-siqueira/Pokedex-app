@@ -42,13 +42,15 @@ a {
 }
 
 .content {
-  background-color: #00000020;
+  background-color: #ffffff;
 	display: flex;
   flex-direction: column;
+  color: #000000;
 }
 
 .menu {
   background-color: #000000;
+  
 }
 
 .menuContent {
