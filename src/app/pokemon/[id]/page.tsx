@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import styles from './page.module.css'
 import Link from 'next/link'
@@ -29,7 +30,7 @@ async function fetchPokemon(id: string): Promise<PokemonDetails> {
         ability: jsonResult.abilities[0].ability.name,
         baseExperience: jsonResult.base_experience,
         height: jsonResult.height,
-        sprite: jsonResult.sprites.other.dream_world.front_default,
+        sprite: null || jsonResult.sprites.other.dream_world.front_default || jsonResult.sprites.front_default ||jsonResult.sprites.other.home.front_default || jsonResult.sprites.other['official-artwork'].front_default || null,
         type: jsonResult.types[0].type.name
     })
 }
@@ -51,7 +52,7 @@ export default async function Pokemons({params: { id }}: pokemonParams) {
                             <p className={styles.pokemonData}>Height: {pokemon.height}</p>
                         </section>
                         <Image
-                            src={pokemon.sprite}
+                            src={pokemon.sprite || 'https://pngimg.com/d/pokemon_logo_PNG12.png'}
                             alt='imagem_pokemon'
                             width={250}
                             height={250}
