@@ -50,6 +50,7 @@ export default async function Pokemons({params: { id }}: pokemonParams) {
                             <p className={styles.pokemonData}>Ability: {pokemon.ability}</p>
                             <p className={styles.pokemonData}>Base EXP: {pokemon.baseExperience}</p>
                             <p className={styles.pokemonData}>Height: {pokemon.height}</p>
+                            <p className={styles.pokemonData}>type: {pokemon.type}</p>
                         </section>
                         <Image
                             src={pokemon.sprite || 'https://pngimg.com/d/pokemon_logo_PNG12.png'}
